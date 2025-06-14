@@ -1,1 +1,1 @@
-# Kazora
+Welkom bij Kazora.
