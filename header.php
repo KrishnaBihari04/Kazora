@@ -41,12 +41,12 @@ if (!isset($page_title)) {
         <!-- Desktop navigation -->
         <div class="d-none d-lg-flex w-100 justify-content-between align-items-center position-relative px-4">
             <ul class="navbar-nav flex-row gap-3">
-                <li class="nav-item"><a class="nav-link" href="#">WATCHES</a></li>
+                <li class="nav-item"><a class="nav-link" href="watches.php">WATCHES</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">ACCESSORIES</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">OUR WORLD</a></li>
             </ul>
 
-            <a class="logo text-white text-center position-absolute top-50 start-50 translate-middle d-none d-lg-block" href="#">KAZORA</a>
+            <a class="logo text-white text-center position-absolute top-50 start-50 translate-middle d-none d-lg-block" href="home.php">KAZORA</a>
 
             <ul class="navbar-nav flex-row gap-3">
                 <li class="nav-item"><a class="nav-link" href="#">STORIES</a></li>

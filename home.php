@@ -38,7 +38,7 @@
 
             <!-- Left nav links -->
             <ul class="navbar-nav flex-row gap-3">
-                <li class="nav-item"><a class="nav-link" href="#">WATCHES</a></li>
+                <li class="nav-item"><a class="nav-link" href="watches.php">WATCHES</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">ACCESSORIES</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">OUR WORLD</a></li>
             </ul>
