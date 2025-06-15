@@ -1,42 +1,57 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+:root {
+    --black: #121212;
+    --dark-gray: #1b1b1b;
+    --light-gray: #2a2a2a;
+    --white: #ffffff;
+
+    --gold: #b8a47e;
+    --gold-deep: #a08963;
+    --gold-light: #d9c4a0;
+    --gold-glow: #f0e3b4;
+
+    --bronze: #8c6f4a;
+    --charcoal: #2e2b26;
+    --warm-shadow: #181715;
+    --amber: #cfa96c;
+
+    --overlay-dark: rgba(18, 18, 18, 0.7);
+    --overlay-gold: rgba(216, 193, 134, 0.1);
+
+    --text-light: #f5f5f5;
+    --text-muted: #a79b89;
+    --text-gold: var(--gold-light);
 }
 
 body, html {
     height: 100%;
     font-family: 'Georgia', serif;
+    background: var(--black);
+    color: var(--white);
+    padding-top: 70px;
 }
 
 .hero {
-    background: url('https://i.pinimg.com/originals/b9/4e/18/b94e18ea40626f10bc67eaba042ec415.gif') no-repeat center center/cover;
+    background: url('https://i.pinimg.com/originals/b9/4e/18/b94e18ea40626f10bc67eaba042ec415.gif') center center fixed;
+    background-size: cover;
     height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    color: white;
     text-align: center;
 }
 
 .overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--overlay-dark);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-}
-
-.hero h1 {
-    font-size: 5rem;
-    letter-spacing: 5px;
-    font-weight: bold;
 }
 
 .btn-enter {
@@ -50,6 +65,6 @@ body, html {
 }
 
 .btn-enter:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--white);
+    color: var(--black);
 }

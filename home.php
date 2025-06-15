@@ -4,14 +4,16 @@
     <!-- Basic settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kazora Watches</title>
+    <title>Kazora</title>
 
     <!-- CSS links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
 </head>
 <body>
 
@@ -29,7 +31,7 @@
         </button>
 
         <!-- Logo for mobile only -->
-        <a class="logo text-white text-center mx-auto d-block d-lg-none" href="#">KAZORA</a>
+        <a class="logo text-white text-center mx-auto d-block d-lg-none" href="home.php">KAZORA</a>
 
         <!-- Desktop navigation (visible on lg and up) -->
         <div class="d-none d-lg-flex w-100 justify-content-between align-items-center position-relative px-4">
@@ -54,7 +56,7 @@
 
         <!-- Profile icon -->
         <div class="nav-icons">
-            <i class="bi bi-person-circle text-white fs-4"></i>
+            <a href="account.php"><i class="bi bi-person-circle text-white fs-4"></i></a>
         </div>
     </div>
 </nav>
@@ -69,7 +71,7 @@
     <div class="offcanvas-body p-0">
         <nav>
             <div class="menu-item">
-                <a href="#" class="menu-link">
+                <a href="watches.php" class="menu-link">
                     <i class="fas fa-clock"></i>
                     WATCHES
                 </a>
@@ -124,12 +126,15 @@
 </div>
 
 <!-- Hero section -->
-<div class="hero">
-    <div class="overlay"></div>
-    <div class="hero-text">
-        <h1 class="display-5 fw-bold">Timeless elegance<br>meets contemporary luxury.</h1>
-        <a href="#appointment" class="btn btn-outline-light mt-4">Make appointment</a>
+    
+<div class="hero d-flex justify-content-center align-items-center text-center position-relative" style="height: 100vh; background: url('https://i.pinimg.com/originals/b9/4e/18/b94e18ea40626f10bc67eaba042ec415.gif') center center / cover no-repeat;">
+    <div class="overlay position-absolute w-100 h-100" style="background: rgba(18, 18, 18, 0.7); top: 0; left: 0;"></div>
+    <div class="hero-content position-relative z-1">
+        <h1 class="display-5 fw-bold" style="color: var(--text-light);">Timeless elegance<br>meets contemporary luxury.</h1>
+        <a href="#contact" class="btn btn-outline-light mt-4 px-4 py-2">Make appointment</a>
     </div>
+</div>
+
 </div>
 
 <!-- Appointment section -->
@@ -175,31 +180,5 @@
     <p>&copy; 2025 All rights reserved by Kazora &nbsp; | &nbsp; Phone: +123 456 789</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Hamburger menu animation
-    const menuBtn = document.querySelector('.menu-btn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    // Animate menu items when opening
-    mobileMenu.addEventListener('shown.bs.offcanvas', () => {
-        const items = document.querySelectorAll('.menu-item');
-        items.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.transform = 'translateX(0)';
-                item.style.opacity = '1';
-            }, index * 100);
-        });
-    });
-
-    // Reset animations when closing
-    mobileMenu.addEventListener('hidden.bs.offcanvas', () => {
-        const items = document.querySelectorAll('.menu-item');
-        items.forEach(item => {
-            item.style.transform = 'translateX(-100px)';
-            item.style.opacity = '0';
-        });
-    });
-</script>
 </body>
 </html>
