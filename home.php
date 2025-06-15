@@ -19,111 +19,73 @@
 
 <!-- Navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-dark px-3">
-    <div class="container-fluid d-flex align-items-center justify-content-between px-3 position-relative">
+  <div class="container-fluid d-flex align-items-center justify-content-between px-3 position-relative">
 
-        <!-- Hamburger button for mobile -->
-        <button class="menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-            <div class="menu-lines">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </div>
-        </button>
+    <!-- Hamburger button for mobile -->
+    <button class="menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+      <div class="menu-lines">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </div>
+    </button>
 
-        <!-- Logo for mobile only -->
-        <a class="logo text-white text-center mx-auto d-block d-lg-none" href="home.php">KAZORA</a>
+    <!-- Logo voor mobiel -->
+    <a class="logo text-white text-center mx-auto d-block d-lg-none" href="#">KAZORA</a>
 
-        <!-- Desktop navigation (visible on lg and up) -->
-        <div class="d-none d-lg-flex w-100 justify-content-between align-items-center position-relative px-4">
-
-            <!-- Left nav links -->
-            <ul class="navbar-nav flex-row gap-3">
-                <li class="nav-item"><a class="nav-link" href="watches.php">WATCHES</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">ACCESSORIES</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">OUR WORLD</a></li>
-            </ul>
-
-            <!-- Logo for desktop only -->
-            <a class="logo text-white text-center position-absolute top-50 start-50 translate-middle d-none d-lg-block" href="#">KAZORA</a>
-
-            <!-- Right nav links -->
-            <ul class="navbar-nav flex-row gap-3">
-                <li class="nav-item"><a class="nav-link" href="#">STORIES</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">BOUTIQUES</a></li>
-            </ul>
-        </div>
-
-        <!-- Profile icon -->
-        <div class="nav-icons">
-            <a href="account.php"><i class="bi bi-person-circle text-white fs-4"></i></a>
-        </div>
+    <!-- Desktop navigation -->
+    <div class="d-none d-lg-flex w-100 justify-content-between align-items-center position-relative px-4">
+      <ul class="navbar-nav flex-row gap-3">
+        <li class="nav-item"><a class="nav-link" href="watches.php">WATCHES</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">ACCESSORIES</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">OUR WORLD</a></li>
+      </ul>
+      <a class="logo text-white text-center position-absolute top-50 start-50 translate-middle d-none d-lg-block" href="#">KAZORA</a>
+      <ul class="navbar-nav flex-row gap-3">
+        <li class="nav-item"><a class="nav-link" href="#">STORIES</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">BOUTIQUES</a></li>
+      </ul>
     </div>
+
+    <div class="nav-icons">
+      <i class="bi bi-person-circle text-white fs-4"></i>
+    </div>
+  </div>
 </nav>
 
-<!-- Mobile menu -->
+<!-- Offcanvas Menu -->
 <div class="offcanvas offcanvas-end mobile-menu" tabindex="-1" id="mobileMenu">
-    <div class="offcanvas-header menu-header">
-        <h5 class="offcanvas-title menu-title" id="mobileMenuLabel">KAZORA</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-    </div>
+  <div class="offcanvas-header menu-header">
+    <h5 class="offcanvas-title menu-title">KAZORA</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
 
-    <div class="offcanvas-body p-0">
-        <nav>
-            <div class="menu-item">
-                <a href="watches.php" class="menu-link">
-                    <i class="fas fa-clock"></i>
-                    WATCHES
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="#" class="menu-link">
-                    <i class="fas fa-rings-wedding"></i>
-                    ACCESSORIES
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="#" class="menu-link">
-                    <i class="fas fa-globe"></i>
-                    OUR WORLD
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="#" class="menu-link">
-                    <i class="fas fa-book-open"></i>
-                    STORIES
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="#contact" class="menu-link" data-bs-dismiss="offcanvas">
-                    <i class="fas fa-envelope"></i>
-                    CONTACT
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="#" class="menu-link">
-                    <i class="fas fa-store"></i>
-                    BOUTIQUES
-                </a>
-            </div>
-        </nav>
+  <div class="offcanvas-body p-0">
+    <nav>
+      <div class="menu-item"><a href="watches.php" class="menu-link"><i class="fas fa-clock"></i>WATCHES</a></div>
+      <div class="menu-item"><a href="#" class="menu-link"><i class="fas fa-rings-wedding"></i>ACCESSORIES</a></div>
+      <div class="menu-item"><a href="#" class="menu-link"><i class="fas fa-globe"></i>OUR WORLD</a></div>
+      <div class="menu-item"><a href="#" class="menu-link"><i class="fas fa-book-open"></i>STORIES</a></div>
+      <div class="menu-item"><a href="#contact" class="menu-link" data-bs-dismiss="offcanvas"><i class="fas fa-envelope"></i>CONTACT</a></div>
+      <div class="menu-item"><a href="#" class="menu-link"><i class="fas fa-store"></i>BOUTIQUES</a></div>
+    </nav>
 
-        <div class="menu-contact">
-            <div class="text-center">
-                <p class="mb-1">info@kazorawatches.com</p>
-                <p class="mb-3">+123 456 789</p>
-            </div>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-pinterest"></i></a>
-            </div>
-        </div>
+    <div class="menu-contact text-center mt-4">
+      <p class="mb-1">info@kazorawatches.com</p>
+      <p class="mb-3">+123 456 789</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+      </div>
     </div>
+  </div>
 </div>
+
 
 <!-- Hero section -->
     
@@ -135,15 +97,13 @@
     </div>
 </div>
 
-</div>
-
 <!-- Appointment section -->
-<section class="section text-center" id="appointment">
+<!-- <section class="section text-center" id="appointment">
     <div class="container">
         <p class="fs-4">KAZORA Watches</p>
         <button class="btn btn-outline-light">Make appointment</button>
     </div>
-</section>
+</section> -->
 
 <!-- Contact section -->
 <section class="section" id="contact">
