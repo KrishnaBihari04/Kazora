@@ -64,7 +64,7 @@
   <div class="offcanvas-body p-0">
     <nav>
       <div class="menu-item"><a href="watches.php" class="menu-link"><i class="fas fa-clock"></i>WATCHES</a></div>
-      <div class="menu-item"><a href="#" class="menu-link"><i class="fas fa-rings-wedding"></i>ACCESSORIES</a></div>
+      <div class="menu-item"><a href="#" class="menu-link"><i class="bi bi-gem"></i>ACCESSORIES</a></div>
       <div class="menu-item"><a href="#" class="menu-link"><i class="fas fa-globe"></i>OUR WORLD</a></div>
       <div class="menu-item"><a href="#" class="menu-link"><i class="fas fa-book-open"></i>STORIES</a></div>
       <div class="menu-item"><a href="#contact" class="menu-link" data-bs-dismiss="offcanvas"><i class="fas fa-envelope"></i>CONTACT</a></div>

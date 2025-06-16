@@ -75,7 +75,7 @@ if (!isset($page_title)) {
                 <a href="watches.php" class="menu-link"><i class="fas fa-clock"></i> WATCHES</a>
             </div>
             <div class="menu-item">
-                <a href="#" class="menu-link"><i class="fas fa-rings-wedding"></i> ACCESSORIES</a>
+                <a href="#" class="menu-link"><i class="bi bi-gem"></i> ACCESSORIES</a>
             </div>
             <div class="menu-item">
                 <a href="#" class="menu-link"><i class="fas fa-globe"></i> OUR WORLD</a>
