@@ -131,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-dark mt-3">Wijzigingen opslaan</button>
       </form>
 
-      <a href="logout.php" class="btn btn-outline-dark w-100 mt-4">Uitloggen</a>
+      <a href="logout.php" class="btn btn-dark w-100 mt-4">Uitloggen</a>
     </div>
   </main>
 
