@@ -98,6 +98,8 @@ $products = $conn->query("SELECT p.*, c.name AS category FROM products p JOIN ca
             <td><input name="name" value="<?= htmlspecialchars($a['name']) ?>" class="form-control"></td>
             <td><input name="email" value="<?= htmlspecialchars($a['email']) ?>" class="form-control"></td>
             <td><input name="role" value="<?= $a['role'] ?>" class="form-control"></td>
+            <td><?= !empty($a['created_at']) ? date('d-m-Y H:i', strtotime($a['created_at'])) : 'Onbekend' ?></td>
+
             <td>
               <button class="btn btn-sm btn-warning">Opslaan</button>
               <a href="?delete_user=<?= $a['id'] ?>" onclick="return confirm('Verwijderen?')" class="btn btn-sm btn-danger">X</a>
