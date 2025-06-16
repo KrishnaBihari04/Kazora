@@ -44,16 +44,16 @@ if (!isset($page_title)) {
         <div class="d-none d-lg-flex w-100 justify-content-between align-items-center position-relative px-4">
             <ul class="navbar-nav flex-row gap-3">
                 <li class="nav-item"><a class="nav-link" href="watches.php">WATCHES</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">ACCESSORIES</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">OUR WORLD</a></li>
+                <li class="nav-item"><a class="nav-link" href="coming-soon.php">ACCESSORIES</a></li>
+                <li class="nav-item"><a class="nav-link" href="coming-soon.php">OUR WORLD</a></li>
             </ul>
 
             <a class="logo text-white text-center position-absolute top-50 start-50 translate-middle d-none d-lg-block" href="home.php">KAZORA</a>
 
             <ul class="navbar-nav flex-row gap-3">
-                <li class="nav-item"><a class="nav-link" href="#">STORIES</a></li>
+                <li class="nav-item"><a class="nav-link" href="coming-soon.php">STORIES</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">BOUTIQUES</a></li>
+                <li class="nav-item"><a class="nav-link" href="coming-soon.php">BOUTIQUES</a></li>
             </ul>
         </div>
 
@@ -80,19 +80,19 @@ if (!isset($page_title)) {
                 <a href="watches.php" class="menu-link"><i class="fas fa-clock"></i> WATCHES</a>
             </div>
             <div class="menu-item">
-                <a href="#" class="menu-link"><i class="bi bi-gem"></i> ACCESSORIES</a>
+                <a href="coming-soon.php" class="menu-link"><i class="bi bi-gem"></i> ACCESSORIES</a>
             </div>
             <div class="menu-item">
-                <a href="#" class="menu-link"><i class="fas fa-globe"></i> OUR WORLD</a>
+                <a href="coming-soon.php" class="menu-link"><i class="fas fa-globe"></i> OUR WORLD</a>
             </div>
             <div class="menu-item">
-                <a href="#" class="menu-link"><i class="fas fa-book-open"></i> STORIES</a>
+                <a href="coming-soon.php" class="menu-link"><i class="fas fa-book-open"></i> STORIES</a>
             </div>
             <div class="menu-item">
                 <a href="#contact" class="menu-link" data-bs-dismiss="offcanvas"><i class="fas fa-envelope"></i> CONTACT</a>
             </div>
             <div class="menu-item">
-                <a href="#" class="menu-link"><i class="fas fa-store"></i> BOUTIQUES</a>
+                <a href="coming-soon.php" class="menu-link"><i class="fas fa-store"></i> BOUTIQUES</a>
             </div>
         </nav>
 
