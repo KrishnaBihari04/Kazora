@@ -44,7 +44,7 @@ require 'header.php';
                             <h5 class="card-title"><?= htmlspecialchars($row['productname']) ?></h5>
                             <p class="card-text"><?= htmlspecialchars($row['description']) ?></p>
                             <p class="fw-bold" style="color: var(--gold);">€<?= htmlspecialchars($row['price']) ?></p>
-                            <a href="#" class="btn btn-outline-light w-100">Bekijk</a>
+                            <a href="product-info.php?id=<?= $row['id'] ?>" class="btn btn-outline-light w-100">Bekijk</a>
                         </div>
                     </div>
                 </div>
