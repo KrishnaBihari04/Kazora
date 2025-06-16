@@ -97,9 +97,13 @@ body, html {
 }
 
 .auth-main {
-    min-height: calc(100vh - 120px); /* 100vh - header + footer hoogte */
+    min-height: calc(100vh - 120px);
     padding: 60px 15px;
 }
+
+main.auth-main {
+    margin-top: 50px;
+  }  
 
 .logo {
     color: var(--white);

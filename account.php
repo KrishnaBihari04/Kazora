@@ -131,7 +131,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-dark mt-3">Wijzigingen opslaan</button>
       </form>
 
-      <a href="logout.php" class="btn btn-dark w-100 mt-4">Uitloggen</a>
+      <?php if ($user['role'] === 'admin'): ?>
+        <a href="admin.php" class="btn btn-outline-warning w-100 mt-4">Ga naar Admin Paneel</a>
+      <?php endif; ?>
+
+      <a href="logout.php" class="btn btn-dark w-100 mt-2">Uitloggen</a>
+
     </div>
   </main>
 

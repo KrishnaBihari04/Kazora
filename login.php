@@ -21,10 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $user = $result->fetch_assoc();
 
   if ($user && password_verify($password, $user['password'])) {
-    $_SESSION['user'] = ['name' => $user['name'], 'email' => $user['email']];
+    $_SESSION['user'] = $user;
     header("Location: account.php");
     exit;
-  } else {
+  }   else {
     $error = "Ongeldige inloggegevens. Probeer opnieuw.";
   }
 }

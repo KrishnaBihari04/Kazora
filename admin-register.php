@@ -2,12 +2,6 @@
 require 'db.php';
 if (session_status() === PHP_SESSION_NONE) session_start();
 
-// Alleen voor ingelogde admins met juiste bevestiging
-if (!isset($_SESSION['user']) || !isset($_SESSION['admin_verified']) || $_SESSION['admin_verified'] !== true) {
-  header("Location: admin.php");
-  exit;
-}
-
 $error = "";
 $success = "";
 
@@ -20,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($password !== $confirm) {
     $error = "Wachtwoorden komen niet overeen.";
   } else {
+    // Check of email al bestaat
     $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -32,8 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'admin')");
       $stmt->bind_param("sss", $name, $email, $hashed);
       $stmt->execute();
-      $success = "Nieuwe admin is succesvol aangemaakt.";
-      unset($_SESSION['admin_verified']); // Eenmalige toegang
+      $success = "Admin-account is succesvol aangemaakt.";
     }
   }
 }
@@ -43,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Nieuwe Admin Registreren</title>
+  <title>Admin Registratie | Kazora</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <main class="auth-main d-flex justify-content-center align-items-center">
   <div class="auth-box" style="max-width: 500px;">
-    <h2 class="mb-4 text-center">Nieuwe Admin toevoegen</h2>
+    <h2 class="mb-4 text-center">Admin-account aanmaken</h2>
 
     <?php if (!empty($success)): ?>
       <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
