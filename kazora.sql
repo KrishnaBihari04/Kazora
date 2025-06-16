@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 15 jun 2025 om 23:30
+-- Gegenereerd op: 16 jun 2025 om 23:15
 -- Serverversie: 10.4.28-MariaDB
 -- PHP-versie: 8.2.4
 
@@ -93,10 +93,20 @@ INSERT INTO `products` (`id`, `productname`, `price`, `description`, `img`, `cat
 
 CREATE TABLE `reviews` (
   `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `rating` varchar(255) NOT NULL,
   `review` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `product_id`, `name`, `rating`, `review`) VALUES
+(3, 1, 'Admin', '5', 'test'),
+(4, 1, 'Admin', '5', 'test'),
+(5, 16, 'Admin', '5', 'test');
 
 -- --------------------------------------------------------
 
@@ -112,6 +122,14 @@ CREATE TABLE `users` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `role`) VALUES
+(2, 'Krishna', 'test@test.nl', '$2y$10$4LFTIW1aYxJD8Mez80q/Qey8BUU/Kks7zQHB5ehASJukFTVe.C6Va', '2025-06-16 17:49:54', 'user'),
+(6, 'Admin', 'admin@kazora.nl', '$2y$10$8LuobDIrpmNNBtko0d4MBeao2oDCj8Tav/IphR.4UmPS9H3mOnJL.', '2025-06-16 19:14:31', 'admin');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -162,13 +180,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT voor een tabel `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
