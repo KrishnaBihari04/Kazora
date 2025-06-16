@@ -25,13 +25,11 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
     font-family: 'Georgia', serif;
     background: var(--black);
     color: var(--white);
 }
 
-/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -45,7 +43,6 @@ body, html {
     box-shadow: none !important;
 }
 
-/* Hero Section */
 .hero {
     background: url('https://i.pinimg.com/originals/b9/4e/18/b94e18ea40626f10bc67eaba042ec415.gif') center center fixed;
     background-size: cover;
@@ -71,7 +68,6 @@ body, html {
     z-index: 2;
 }
 
-/* Buttons */
 .btn-enter {
     margin-top: 30px;
     padding: 12px 30px;
@@ -87,13 +83,11 @@ body, html {
     color: var(--black);
 }
 
-/* Sections */
 .section {
     padding: 60px 15px;
     background-color: var(--dark-gray);
 }
 
-/* Footer */
 .footer {
     border-top: 1px solid white;
     background-color: var(--light-gray);
@@ -102,7 +96,11 @@ body, html {
     font-size: 0.9rem;
 }
 
-/* Logo */
+.auth-main {
+    min-height: calc(100vh - 120px); /* 100vh - header + footer hoogte */
+    padding: 60px 15px;
+}
+
 .logo {
     color: var(--white);
     font-family: 'Georgia', serif;
@@ -115,7 +113,6 @@ body, html {
     text-decoration: none;
 }
 
-/* Nav links */
 .nav-link {
     color: var(--white);
     font-weight: 500;
@@ -139,7 +136,7 @@ body, html {
     width: 100%;
 }
 
-/* Hamburger button */
+/* Hamburger menu button */
 .menu-btn {
     position: relative;
     width: 50px;
@@ -180,7 +177,7 @@ body, html {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Menu */
+/* Mobile menu */
 .mobile-menu {
     background-color: var(--charcoal);
     border: none;
@@ -198,7 +195,7 @@ body, html {
     font-size: 1.5rem;
 }
 
-/* Menu Items */
+/* Menu items */
 .menu-item {
     margin: 0.5rem 0;
     transform: translateX(-100px);
@@ -231,7 +228,7 @@ body, html {
     text-align: center;
 }
 
-/* Contact & Socials */
+/* Contact info in menu */
 .menu-contact {
     position: absolute;
     bottom: 0;
@@ -259,7 +256,6 @@ body, html {
     transform: scale(1.1);
 }
 
-/* For mobile menu icons */
 .mobile-menu .social-btn i {
     color: var(--white) !important;
     filter: none !important;
@@ -282,12 +278,11 @@ body, html {
     opacity: 1 !important;
 }
 
-/* Responsive visibility */
+
 @media (max-width: 991.98px) {
     .desktop-nav { display: none; }
     .menu-btn { display: block; }
 }
-
 @media (min-width: 992px) {
     .menu-btn { display: none; }
     .desktop-nav { display: flex; }

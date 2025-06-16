@@ -1,13 +1,12 @@
 <?php
-$host = "localhost";
-$db = "kazora";
-$user = "root";
-$pass = "";
+$host = 'localhost';
+$user = 'root';
+$pass = ''; 
+$db   = 'kazora';
 
 $conn = new mysqli($host, $user, $pass, $db);
 
-// Check verbinding
 if ($conn->connect_error) {
-    die("Verbinding mislukt: " . $conn->connect_error);
+    die("Verbinding met database mislukt: " . $conn->connect_error);
 }
 ?>

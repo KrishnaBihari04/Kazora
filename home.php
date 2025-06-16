@@ -1,3 +1,8 @@
+<?php 
+session_start(); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -31,7 +36,7 @@
     </button>
 
     <!-- Logo voor mobiel -->
-    <a class="logo text-white text-center mx-auto d-block d-lg-none" href="#">KAZORA</a>
+    <a class="logo text-white text-center mx-auto d-block d-lg-none" href="home.php">KAZORA</a>
 
     <!-- Desktop navigation -->
     <div class="d-none d-lg-flex w-100 justify-content-between align-items-center position-relative px-4">
@@ -49,7 +54,10 @@
     </div>
 
     <div class="nav-icons">
-      <i class="bi bi-person-circle text-white fs-4"></i>
+      <?php session_start(); ?>
+      <a href="<?php echo isset($_SESSION['user']) ? 'account.php' : 'auth.php'; ?>" class="nav-link">
+        <i class="fas fa-user"></i>
+      </a>
     </div>
   </div>
 </nav>

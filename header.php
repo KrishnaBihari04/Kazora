@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if (!isset($page_title)) {
     $page_title = "Kazora";
 }
@@ -57,7 +59,10 @@ if (!isset($page_title)) {
 
         <!-- Profile icon -->
         <div class="nav-icons">
-            <a href="account.php"><i class="bi bi-person-circle text-white fs-4"></i></a>
+            <?php session_start(); ?>
+            <a href="<?php echo isset($_SESSION['user']) ? 'account.php' : 'auth.php'; ?>" class="nav-link">
+                <i class="fas fa-user"></i>
+            </a>
         </div>
     </div>
 </nav>

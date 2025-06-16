@@ -3,8 +3,10 @@ $page_title = "Kazora Collectie";
 require 'header.php';
 ?>
 
+<!-- Begin pagina-wrapper -->
 <div class="d-flex flex-column min-vh-100">
 
+    <!-- Hero sectie -->
     <main class="flex-grow-1">
         <section class="hero d-flex justify-content-center align-items-center text-center position-relative">
             <div class="overlay"></div>
@@ -18,5 +20,6 @@ require 'header.php';
         </section>
     </main>
 
+    <!-- Footer -->
     <?php require 'footer.php'; ?>
 </div>
