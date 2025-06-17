@@ -5,7 +5,7 @@
   <div class="overlay"></div>
   <div class="hero-content">
     <!-- Bedrijfsnaam -->
-    <h1 class="display-4 fw-bold text-gold">Kazora</h1>
+    <h1 class="text-gold" style="font-family: 'Georgia', serif; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">KAZORA</h1>
     <!-- Inspirerende quote -->
     <p class="lead text-light fst-italic mt-3">"Elegance is the only beauty that never fades."</p>
     <!-- Aankondiging -->
