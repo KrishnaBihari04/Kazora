@@ -72,35 +72,35 @@ $reviews = $stmt->get_result();
   <h4 class="text-gold">€<?= htmlspecialchars($product['price']) ?></h4>
   <p class="lead"><?= htmlspecialchars($product['description']) ?></p>
   <p class="text-light">Categorie: <?= htmlspecialchars($product['category_name']) ?></p>
-  <a href="#" class="btn btn-outline-light px-4 py-2 mt-3">Reserveer dit horloge</a>
+  <a href="#" class="btn btn-outline-light px-4 py-2 mt-3">Reserve this watch</a>
 
   <hr class="my-5">
 
   <!-- Reviewformulier voor ingelogde gebruikers -->
   <?php if (isset($_SESSION['user'])): ?>
-    <h4 class="mb-3">Laat een review achter</h4>
+    <h4 class="mb-3">Leave a review</h4>
     <?php if ($review_error): ?>
       <div class="alert alert-danger"><?= htmlspecialchars($review_error) ?></div>
     <?php endif; ?>
     <form method="POST" class="mb-5 d-grid gap-3" style="max-width: 500px; margin: 0 auto;">
       <select name="rating" class="form-select" required>
-        <option value="">Beoordeling (1–5)</option>
-        <option value="5">5 - Uitstekend</option>
-        <option value="4">4 - Goed</option>
-        <option value="3">3 - Gemiddeld</option>
-        <option value="2">2 - Matig</option>
-        <option value="1">1 - Slecht</option>
+      <option value="">Rating (1–5)</option>
+      <option value="5">5 - Excellent</option>
+      <option value="4">4 - Good</option>
+      <option value="3">3 - Average</option>
+      <option value="2">2 - Bad</option>
+      <option value="1">1 - Poor</option>
       </select>
-      <textarea name="review" class="form-control" placeholder="Jouw review..." required></textarea>
-      <button type="submit" class="btn btn-dark">Verstuur review</button>
+      <textarea name="review" class="form-control" placeholder="Your review..." required></textarea>
+      <button type="submit" class="btn btn-dark">Submit review</button>
     </form>
   <?php else: ?>
     <!-- Bericht voor niet-ingelogde gebruikers -->
-    <p class="text-muted">Log in om een review achter te laten.</p>
+    <p class="text-muted">Log in to leave a review.</p>
   <?php endif; ?>
 
   <!-- Reviewoverzicht -->
-  <h4 class="mb-3">💬 Recensies</h4>
+  <h4 class="mb-3">💬 Reviews</h4>
   <?php if ($reviews->num_rows > 0): ?>
     <?php while ($r = $reviews->fetch_assoc()): ?>
       <div class="bg-dark p-3 rounded mb-3 text-start" style="max-width: 600px; margin: 0 auto;">
@@ -114,7 +114,7 @@ $reviews = $stmt->get_result();
     <?php endwhile; ?>
   <?php else: ?>
     <!-- Bericht bij geen reviews -->
-    <p class="text-muted">Nog geen reviews.</p>
+    <p class="text-muted">No reviews yet.</p>
   <?php endif; ?>
 </main>
 
