@@ -93,8 +93,8 @@ if (!isset($page_title)) {
 
         <div class="menu-contact">
             <div class="text-center">
-                <p class="mb-1">info@kazorawatches.com</p>
-                <p class="mb-3">+123 456 789</p>
+                <p class="mb-1 text-light">info@kazorawatches.com</p>
+                <p class="mb-3 text-light">+123 456 789</p>
             </div>
             <div class="d-flex justify-content-center gap-3">
                 <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
