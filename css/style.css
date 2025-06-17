@@ -112,6 +112,13 @@ main.auth-main {
     font-size: 1.8rem;
     letter-spacing: 1px;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--gold-light);
+    text-shadow: 0 0 8px var(--gold-glow), 0 0 15px var(--gold-light);
+    transform: scale(1.05);
 }
 
 .nav-link {
