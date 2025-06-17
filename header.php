@@ -36,8 +36,9 @@ if (!isset($page_title)) {
       </div>
     </button>
 
-    <!-- Logo (midden) -->
-    <a class="logo text-white text-center position-absolute start-50 translate-middle-x d-block" style="z-index: 2;" href="home.php">KAZORA</a>
+    <!-- Mobiel logo -->
+    <a class="logo text-white text-center position-absolute start-50 translate-middle-x d-block d-lg-none" style="z-index: 2;" href="home.php">KAZORA</a>
+
 
     <!-- Profile icon (rechts) -->
     <div class="nav-icons d-lg-none">
