@@ -62,7 +62,7 @@ if (!isset($page_title)) {
 
       <!-- Right incl. profile -->
       <div class="d-flex gap-4 align-items-center">
-        <a class="nav-link" href="coming-soon.php">STORIES</a>
+        <a class="nav-link" href="stories.php">STORIES</a>
         <a class="nav-link" href="#contact">CONTACT</a>
         <a class="nav-link" href="boutiques.php">BOUTIQUES</a>
         <a href="<?= isset($_SESSION['user']) ? 'account.php' : 'auth.php'; ?>" class="nav-link">
@@ -85,7 +85,7 @@ if (!isset($page_title)) {
             <div class="menu-item"><a href="watches.php" class="menu-link"><i class="fas fa-clock"></i> WATCHES</a></div>
             <div class="menu-item"><a href="coming-soon.php" class="menu-link"><i class="bi bi-gem"></i> ACCESSORIES</a></div>
             <div class="menu-item"><a href="coming-soon.php" class="menu-link"><i class="fas fa-globe"></i> OUR WORLD</a></div>
-            <div class="menu-item"><a href="coming-soon.php" class="menu-link"><i class="fas fa-book-open"></i> STORIES</a></div>
+            <div class="menu-item"><a href="stories.php" class="menu-link"><i class="fas fa-book-open"></i> STORIES</a></div>
             <div class="menu-item"><a href="#contact" class="menu-link" data-bs-dismiss="offcanvas"><i class="fas fa-envelope"></i> CONTACT</a></div>
             <div class="menu-item"><a href="boutiques.php" class="menu-link"><i class="fas fa-store"></i> BOUTIQUES</a></div>
             <div class="menu-item"><a href="<?= isset($_SESSION['user']) ? 'account.php' : 'auth.php'; ?>" class="menu-link"><i class="fas fa-user"></i> ACCOUNT</a></div>

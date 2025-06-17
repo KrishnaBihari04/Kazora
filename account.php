@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-  <?php include 'header.php'; ?>
+  <!-- <?php include 'header.php'; ?> -->
 
   <main class="auth-main d-flex justify-content-center align-items-center">
     <div class="auth-box" style="width: 100%; max-width: 600px;">

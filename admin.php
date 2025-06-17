@@ -68,7 +68,7 @@ $products = $conn->query("SELECT p.*, c.name AS category FROM products p JOIN ca
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<?php include 'header.php'; ?>
+<!-- <?php include 'header.php'; ?> -->
 <main class="container mt-5 pt-5">
   <h1 class="text-center mb-5">Admin Paneel</h1>
 
