@@ -6,20 +6,20 @@ if (!isset($page_title)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= htmlspecialchars($page_title) ?></title>
 
     <!-- CSS links -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="shortcut icon" href="assets/kazora.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/kazora.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/main.js"></script>
 </head>
 <body class="bg-black text-light" style="font-family: 'Georgia', serif;">
@@ -28,7 +28,7 @@ if (!isset($page_title)) {
 <nav class="navbar navbar-expand-lg navbar-dark px-3">
   <div class="container-fluid d-flex align-items-center justify-content-between px-3 position-relative">
 
-    <!-- Hamburger (links) -->
+    <!-- Hamburger (left) -->
     <button class="menu-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
       <div class="menu-lines">
         <span class="menu-line"></span>
@@ -37,18 +37,17 @@ if (!isset($page_title)) {
       </div>
     </button>
 
-    <!-- Mobiel logo -->
+    <!-- Mobile logo -->
     <a class="logo text-white text-center position-absolute start-50 translate-middle-x d-block d-lg-none" style="z-index: 2;" href="home.php">KAZORA</a>
 
-
-    <!-- Profile icon (rechts) -->
+    <!-- Profile icon (right) -->
     <div class="nav-icons d-lg-none">
       <a href="<?= isset($_SESSION['user']) ? 'account.php' : 'auth.php'; ?>" class="nav-link">
         <i class="fas fa-user"></i>
       </a>
     </div>
 
-    <!-- Desktop nav met logo in het midden -->
+    <!-- Desktop nav with logo in the center -->
     <div class="d-none d-lg-flex w-100 align-items-center justify-content-between">
       <!-- Left -->
       <div class="d-flex gap-4 align-items-center">
@@ -60,7 +59,7 @@ if (!isset($page_title)) {
       <!-- Logo -->
       <a class="logo text-white d-inline-block text-center" href="home.php">KAZORA</a>
 
-      <!-- Right incl. profile -->
+      <!-- Right (includes profile) -->
       <div class="d-flex gap-4 align-items-center">
         <a class="nav-link" href="stories.php">STORIES</a>
         <a class="nav-link" href="#contact">CONTACT</a>
@@ -72,7 +71,6 @@ if (!isset($page_title)) {
     </div>
   </div>
 </nav>
-
 
 <!-- Mobile menu -->
 <div class="offcanvas offcanvas-end mobile-menu" tabindex="-1" id="mobileMenu">

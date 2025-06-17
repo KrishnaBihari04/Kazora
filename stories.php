@@ -1,54 +1,58 @@
 <?php 
-$page_title = "Kazora – Verhalen";
+$page_title = "Kazora – Stories";
 require 'header.php'; 
 ?>
 
-<!-- Verhalen pagina -->
+<!-- Sectie: Verhalenpagina met achtergrond, titel en contentblokken -->
 <section class="section mt-5" style="background-color: var(--dark-gray); padding: 60px 20px; border-radius: 10px;">
   <div class="container" style="max-width: 900px; text-align: center;">
-    <h1 class="mb-4" style="font-size: 2.8rem; color: var(--gold); letter-spacing: 1px;">Onze Verhalen</h1>
+
+    <!-- Paginatitel en inleidende tekst -->
+    <h1 class="mb-4" style="font-size: 2.8rem; color: var(--gold); letter-spacing: 1px;">Our Stories</h1>
     <p class="lead mb-5" style="font-size: 1.4rem; line-height: 1.6; margin-left: auto; margin-right: auto;">
-      Ontdek de passie, vakmanschap en innovatie die achter elke Kazora horloge schuilt. Laat je inspireren door onze verhalen en ervaar de tijdloze elegantie die wij creëren.
+      Discover the passion, craftsmanship, and innovation behind every Kazora timepiece. Be inspired by our stories and experience the timeless elegance we create.
     </p>
-    <hr style="border-top: 2px solid rgba(255,255,255,0.2); margin: 50px 0;">
-
-    <!-- Verhaal 1 -->
-    <div class="story mb-5" style="margin-bottom: 50px; text-align: center;">
-      <h2 style="font-size: 2rem; color: var(--gold-light); margin-bottom: 10px;">Het Ambacht Achter Kazora</h2>
-      <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px;">
-        Elke Kazora horloge wordt met de hand vervaardigd door onze meest getalenteerde vakmensen. Van het selecteren van de hoogste kwaliteit materialen tot het precisiewerk dat nodig is om elk detail perfect te krijgen, ons vakmanschap straalt door in elke klok.
-      </p>
-      <p style="font-size: 1.2rem; line-height: 1.6;">
-        We geloven dat ware luxe begint bij de details. Daarom besteden wij uren aan het finetunen van elke horloge, zodat u een tijdloos stuk draagt dat generaties lang mooi blijft.
-      </p>
-    </div>
-
-    <!-- Verhaal 2 -->
-    <div class="story mb-5" style="margin-bottom: 50px; text-align: center;">
-      <h2 style="font-size: 2rem; color: var(--gold-light); margin-bottom: 10px;">Innovatie en Tijdloos Design</h2>
-      <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px;">
-        Onze collectie combineert innovatieve technologie met tijdloze esthetiek. Elk horloge vertelt niet alleen de tijd, maar ook een verhaal van vooruitgang en traditie, ontworpen voor de moderne wereld.
-      </p>
-      <p style="font-size: 1.2rem; line-height: 1.6;">
-        Het resultaat? Een perfecte balans tussen functionaliteit en elegantie, waardoor onze horloges niet alleen mooi zijn, maar ook betrouwbaar en duurzaam.
-      </p>
-    </div>
-
-    <!-- Verhaal 3 -->
-    <div class="story mb-5" style="margin-bottom: 50px; text-align: center;">
-      <h2 style="font-size: 2rem; color: var(--gold-light); margin-bottom: 10px;">De Passie van Onze Makers</h2>
-      <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px;">
-        Onze horlogemakers delen een diepe passie voor perfectie. Ze besteden uren aan elke klok, met liefde en precisie, zodat u een stuk kunt dragen dat echt bijzonder is.
-      </p>
-      <p style="font-size: 1.2rem; line-height: 1.6;">
-        Elke creatie is het resultaat van vakmanschap en toewijding, waardoor onze horloges niet zomaar accessoires zijn, maar kunstwerken die de tijd overstijgen.
-      </p>
-    </div>
 
     <hr style="border-top: 2px solid rgba(255,255,255,0.2); margin: 50px 0;">
 
+    <!-- Verhaal 1: Vakmanschap -->
+    <div class="story mb-5" style="margin-bottom: 50px; text-align: center;">
+      <h2 style="font-size: 2rem; color: var(--gold-light); margin-bottom: 10px;">The Craftsmanship Behind Kazora</h2>
+      <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px;">
+        Every Kazora watch is handcrafted by our most talented artisans. From selecting the highest quality materials to the precision work required to perfect every detail, our craftsmanship shines through in every timepiece.
+      </p>
+      <p style="font-size: 1.2rem; line-height: 1.6;">
+        We believe true luxury begins with the details. That's why we spend hours fine-tuning each watch, ensuring you wear a timeless piece that remains beautiful for generations.
+      </p>
+    </div>
+
+    <!-- Verhaal 2: Innovatie en tijdloos design -->
+    <div class="story mb-5" style="margin-bottom: 50px; text-align: center;">
+      <h2 style="font-size: 2rem; color: var(--gold-light); margin-bottom: 10px;">Innovation and Timeless Design</h2>
+      <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px;">
+        Our collection blends innovative technology with timeless aesthetics. Each watch not only tells time but also a story of progress and tradition, designed for the modern world.
+      </p>
+      <p style="font-size: 1.2rem; line-height: 1.6;">
+        The result? A perfect balance of functionality and elegance, making our watches not only beautiful but also reliable and enduring.
+      </p>
+    </div>
+
+    <!-- Verhaal 3: De passie van de makers -->
+    <div class="story mb-5" style="margin-bottom: 50px; text-align: center;">
+      <h2 style="font-size: 2rem; color: var(--gold-light); margin-bottom: 10px;">The Passion of Our Makers</h2>
+      <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px;">
+        Our watchmakers share a deep passion for perfection. They dedicate hours to each timepiece, working with love and precision, so you can wear something truly special.
+      </p>
+      <p style="font-size: 1.2rem; line-height: 1.6;">
+        Every creation is the result of skill and dedication, making our watches not mere accessories but works of art that transcend time.
+      </p>
+    </div>
+
+    <hr style="border-top: 2px solid rgba(255,255,255,0.2); margin: 50px 0;">
+
+    <!-- Afsluitende oproep tot beleving -->
     <p style="font-size: 1.4rem; font-weight: bold; color: var(--gold); margin-bottom: 40px;">
-      Laat je inspireren door onze verhalen en ervaar de passie en het vakmanschap achter elk Kazora horloge.
+      Be inspired by our stories and experience the passion and craftsmanship behind every Kazora watch.
     </p>
   </div>
 </section>

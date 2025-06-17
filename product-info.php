@@ -1,40 +1,46 @@
 <?php
 require 'db.php';
+
+// Start de sessie indien nodig
 if (session_status() === PHP_SESSION_NONE) session_start();
 
+// Controleer of er een geldig product-ID is meegegeven
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
   die("⛔ Ongeldig product.");
 }
 
 $product_id = intval($_GET['id']);
 
-// Product ophalen
+// Haal het product op uit de database (inclusief categorienaam)
 $stmt = $conn->prepare("SELECT p.*, c.name AS category_name FROM products p JOIN category c ON p.category_id = c.id WHERE p.id = ?");
 $stmt->bind_param("i", $product_id);
 $stmt->execute();
 $product = $stmt->get_result()->fetch_assoc();
 
+// Toon foutmelding als product niet gevonden is
 if (!$product) {
   die("⛔ Product niet gevonden.");
 }
 
-// Review toevoegen
+// Verwerk een review indien het formulier is ingediend en gebruiker is ingelogd
 $review_error = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user'])) {
   $name = $_SESSION['user']['name'];
   $rating = intval($_POST['rating']);
   $review = trim($_POST['review']);
 
+  // Valideer beoordeling en review
   if ($rating < 1 || $rating > 5 || empty($review)) {
     $review_error = "Geef een geldige beoordeling en een review.";
   } else {
+    // Sla de review op in de database
     $stmt = $conn->prepare("INSERT INTO reviews (name, rating, review, product_id) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("sisi", $name, $rating, $review, $product_id);
     $stmt->execute();
   }
 }
 
-// Alle reviews voor dit product ophalen
+// Haal alle reviews op voor dit product
 $stmt = $conn->prepare("SELECT * FROM reviews WHERE product_id = ? ORDER BY id DESC");
 $stmt->bind_param("i", $product_id);
 $stmt->execute();
@@ -47,13 +53,17 @@ $reviews = $stmt->get_result();
   <meta charset="UTF-8">
   <title><?= htmlspecialchars($product['productname']) ?> | Kazora</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Stijlen en Bootstrap -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Navigatiebalk -->
 <?php include 'header.php'; ?>
 
+<!-- Productdetails -->
 <main class="container mt-5 pt-5 text-center text-white">
   <h2 class="mb-4"><?= htmlspecialchars($product['productname']) ?></h2>
 
@@ -66,6 +76,7 @@ $reviews = $stmt->get_result();
 
   <hr class="my-5">
 
+  <!-- Reviewformulier voor ingelogde gebruikers -->
   <?php if (isset($_SESSION['user'])): ?>
     <h4 class="mb-3">Laat een review achter</h4>
     <?php if ($review_error): ?>
@@ -84,9 +95,11 @@ $reviews = $stmt->get_result();
       <button type="submit" class="btn btn-dark">Verstuur review</button>
     </form>
   <?php else: ?>
+    <!-- Bericht voor niet-ingelogde gebruikers -->
     <p class="text-muted">Log in om een review achter te laten.</p>
   <?php endif; ?>
 
+  <!-- Reviewoverzicht -->
   <h4 class="mb-3">💬 Recensies</h4>
   <?php if ($reviews->num_rows > 0): ?>
     <?php while ($r = $reviews->fetch_assoc()): ?>
@@ -100,11 +113,12 @@ $reviews = $stmt->get_result();
       </div>
     <?php endwhile; ?>
   <?php else: ?>
+    <!-- Bericht bij geen reviews -->
     <p class="text-muted">Nog geen reviews.</p>
   <?php endif; ?>
-
 </main>
 
+<!-- Footer -->
 <?php include 'footer.php'; ?>
 
 </body>

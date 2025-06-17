@@ -1,8 +1,10 @@
 <?php
 require 'db.php';
+
+// Start sessie indien nog niet gestart
 if (session_status() === PHP_SESSION_NONE) session_start();
 
-// Redirect als al ingelogd
+// Als gebruiker al is ingelogd, doorverwijzen naar accountpagina
 if (isset($_SESSION['user'])) {
   header("Location: account.php");
   exit;
@@ -10,13 +12,14 @@ if (isset($_SESSION['user'])) {
 
 $errors = [];
 
+// Verwerk formulier bij verzending
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $name     = trim($_POST['name']);
   $email    = trim($_POST['email']);
   $password = $_POST['password'];
   $confirm  = $_POST['confirm'];
 
-  // Validatie
+  // Basisvalidatie
   if (empty($name) || empty($email) || empty($password) || empty($confirm)) {
     $errors[] = "Alle velden zijn verplicht.";
   } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -24,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   } elseif ($password !== $confirm) {
     $errors[] = "Wachtwoorden komen niet overeen.";
   } else {
-    // Check op bestaande gebruiker
+    // Controleer of het e-mailadres al bestaat
     $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -33,13 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->num_rows > 0) {
       $errors[] = "Er bestaat al een account met dit e-mailadres.";
     } else {
-      // Wachtwoord hashen & opslaan
+      // Wachtwoord versleutelen en opslaan
       $hashed = password_hash($password, PASSWORD_DEFAULT);
       $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'user')");
       $stmt->bind_param("sss", $name, $email, $hashed);
       $stmt->execute();
 
-      // Direct inloggen
+      // Automatisch inloggen na registratie
       $_SESSION['user'] = ['name' => $name, 'email' => $email];
       header("Location: account.php");
       exit;
@@ -54,17 +57,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <title>Kazora | Registreren</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Stijlen en Bootstrap -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Navigatie -->
   <?php include 'header.php'; ?>
 
+  <!-- Registratieformulier -->
   <main class="auth-main d-flex justify-content-center align-items-center">
     <div class="auth-box">
       <h2 class="mb-4 text-center">Account aanmaken bij <span class="text-gold">Kazora</span></h2>
 
+      <!-- Foutmeldingen weergeven -->
       <?php if (!empty($errors)): ?>
         <div class="alert alert-danger">
           <ul class="mb-0">
@@ -75,6 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
       <?php endif; ?>
 
+      <!-- Formuliervelden -->
       <form method="POST" class="d-grid gap-3">
         <div>
           <label for="name" class="form-label">Naam</label>
@@ -99,12 +108,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-dark">Registreren</button>
       </form>
 
+      <!-- Link naar inlogpagina -->
       <p class="mt-4 text-center">
         Heb je al een account? <a href="login.php" class="link-dark text-decoration-underline">Log hier in</a>
       </p>
     </div>
   </main>
 
+  <!-- Footer -->
   <?php include 'footer.php'; ?>
 
 </body>

@@ -1,8 +1,10 @@
 <?php
 require 'db.php';
 
+// Bepaal geselecteerde categorie op basis van GET-parameter (standaard = 1)
 $category_id = isset($_GET['category']) ? intval($_GET['category']) : 1;
 
+// Haal producten op binnen de geselecteerde categorie
 $sql = "SELECT products.*, category.name as category_name
         FROM products
         JOIN category ON products.category_id = category.id
@@ -12,20 +14,21 @@ $stmt->bind_param("i", $category_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
+// Bepaal categorienaam voor paginatitel
 $category_name = '';
 if ($row = $result->fetch_assoc()) {
     $category_name = $row['category_name'];
-    $result->data_seek(0);
+    $result->data_seek(0); // Reset pointer zodat we later alle rijen opnieuw kunnen ophalen
 }
 
 $page_title = "Kazora – " . $category_name;
 require 'header.php';
 ?>
 
-<!-- Begin wrapper -->
+<!-- Wrapper: volledige pagina met zwarte achtergrond -->
 <div class="d-flex flex-column min-vh-100 bg-black">
 
-    <!-- Hero -->
+    <!-- Hero met categorieafbeelding en titel -->
     <section class="hero d-flex justify-content-center align-items-center text-center position-relative" style="height: 60vh; background: url('https://i.pinimg.com/originals/b9/4e/18/b94e18ea40626f10bc67eaba042ec415.gif') center center / cover no-repeat;">
         <div class="overlay position-absolute w-100 h-100" style="background: rgba(18, 18, 18, 0.7); top: 0; left: 0;"></div>
         <div class="position-relative z-1">
@@ -33,7 +36,7 @@ require 'header.php';
         </div>
     </section>
 
-    <!-- Producten -->
+    <!-- Productoverzicht -->
     <section class="py-5 container flex-grow-1">
         <div class="row g-4">
             <?php while($row = $result->fetch_assoc()): ?>
@@ -52,6 +55,6 @@ require 'header.php';
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer met navigatie/info -->
     <?php require 'footer.php'; ?>
 </div>
