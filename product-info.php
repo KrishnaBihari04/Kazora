@@ -61,7 +61,7 @@ $reviews = $stmt->get_result();
 
   <h4 class="text-gold">€<?= htmlspecialchars($product['price']) ?></h4>
   <p class="lead"><?= htmlspecialchars($product['description']) ?></p>
-  <p class="text-muted">Categorie: <?= htmlspecialchars($product['category_name']) ?></p>
+  <p class="text-light">Categorie: <?= htmlspecialchars($product['category_name']) ?></p>
   <a href="#" class="btn btn-outline-light px-4 py-2 mt-3">Reserveer dit horloge</a>
 
   <hr class="my-5">

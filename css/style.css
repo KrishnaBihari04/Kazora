@@ -111,9 +111,6 @@ main.auth-main {
     font-weight: 700;
     font-size: 1.8rem;
     letter-spacing: 1px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     text-decoration: none;
 }
 
