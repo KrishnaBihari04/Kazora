@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 16 jun 2025 om 23:15
+-- Gegenereerd op: 18 jun 2025 om 22:21
 -- Serverversie: 10.4.28-MariaDB
 -- PHP-versie: 8.2.4
 
@@ -37,8 +37,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Dames horloges'),
-(2, 'Heren horloges');
+(1, 'Lady\'s choice '),
+(2, 'Men\'s choice');
 
 -- --------------------------------------------------------
 
@@ -60,30 +60,30 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `productname`, `price`, `description`, `img`, `category_id`) VALUES
-(1, 'Kazora Milano Nero', '599.99', 'Diepzwart meesterwerk met Italiaans vakmanschap', 'product-img/milano_nero.jpeg', 2),
-(2, 'Kazora Firenze Oro', '749.99', 'Goudkleurig statement horloge geïnspireerd op Firenze', 'product-img/firenze_oro.jpeg', 2),
-(3, 'Kazora Roma Classico', '689.99', 'Tijdloze klasse met Romeins design', 'product-img/roma_classico.jpeg', 2),
-(4, 'Kazora Venezia Notte', '799.99', 'Middernachtblauw ontwerp, elegant als Venetië bij nacht', 'product-img/venezia_notte.jpeg', 2),
-(5, 'Kazora Napoli Solare', '729.99', 'Zonnig design met een luxe goud-accent', 'product-img/napoli_solare.jpeg', 2),
-(6, 'Kazora Torino Acciaio', '669.99', 'Stalen kracht met subtiele Italiaanse finesse', 'product-img/torino_acciaio.jpeg', 2),
-(7, 'Kazora Palermo Eleganza', '799.99', 'Elegant ontwerp met parelmoeren wijzerplaat', 'product-img/palermo_eleganza.jpeg', 2),
-(8, 'Kazora Como Luna', '719.99', 'Maankleurige wijzerplaat met zilveren afwerking', 'product-img/como_luna.jpeg', 2),
-(9, 'Kazora Verona Tempo', '689.99', 'Verfijnde chronograaf geïnspireerd op romantisch Verona', 'product-img/verona_tempo.jpeg', 2),
-(10, 'Kazora Modena Scuro', '759.99', 'Donkere luxe met sportieve details', 'product-img/modena_scuro.jpeg', 2),
-(11, 'Kazora Amalfi Azure', '709.99', 'Zee-blauwe wijzerplaat met roségouden accenten', 'product-img/amalfi_azure.jpeg', 2),
-(12, 'Kazora Siena Notturna', '799.99', 'Diep donkerblauw met nachtluxe uitstraling', 'product-img/siena_notturna.jpeg', 2),
-(13, 'Kazora Milano Rosa', '649.99', 'Zachtroze elegantie met roségouden details', 'product-img/milano_rosa.jpeg', 1),
-(14, 'Kazora Firenze Perla', '729.99', 'Parelmoer wijzerplaat met klassieke finesse', 'product-img/firenze_perla.jpeg', 1),
-(15, 'Kazora Roma Aurelia', '689.99', 'Goud en ivoor in een tijdloos damesdesign', 'product-img/roma_aurelia.jpeg', 1),
-(16, 'Kazora Venezia Sera', '779.99', 'Avondblauw met subtiele diamantelementen', 'product-img/venezia_sera.jpeg', 1),
-(17, 'Kazora Napoli Alba', '699.99', 'Zonnestraal-ontwerp met lichte champagnekleur', 'product-img/napoli_alba.jpeg', 1),
-(18, 'Kazora Torino Luna', '669.99', 'Zilveren maanlicht op een smalle leren band', 'product-img/torino_luna.jpeg', 1),
-(19, 'Kazora Palermo Rosa', '759.99', 'Zachtroze luxe met Italiaanse charme', 'product-img/palermo_rosa.jpeg', 1),
-(20, 'Kazora Como Eleganza', '719.99', 'Minimalistisch damesdesign met zilveren accenten', 'product-img/como_eleganza.jpeg', 1),
-(21, 'Kazora Verona Bellezza', '689.99', 'Romantiek in een ronde parelmoer kast', 'product-img/verona_bellezza.jpeg', 1),
-(22, 'Kazora Modena Bianca', '739.99', 'Witgouden kast met ivoorkleurige wijzerplaat', 'product-img/modena_bianca.jpeg', 1),
-(23, 'Kazora Amalfi Sole', '709.99', 'Zonnig dameshorloge met gouden rand', 'product-img/amalfi_sole.jpeg', 1),
-(24, 'Kazora Siena Aurora', '799.99', 'Pastelroze omhuld in nachtblauwe details', 'product-img/siena_aurora.jpeg', 1);
+(1, 'Kazora Milano Nero', '2369.96', 'Deep black masterpiece with Italian craftsmanship', 'product-img/milano_nero.jpeg', 2),
+(2, 'Kazora Firenze Oro', '2962.46', 'Gold-tone statement watch inspired by Firenze', 'product-img/firenze_oro.jpeg', 2),
+(3, 'Kazora Roma Classico', '2727.46', 'Timeless class with Roman design', 'product-img/roma_classico.jpeg', 2),
+(4, 'Kazora Venezia Notte', '3160.96', 'Midnight blue design, as elegant as Venice at night', 'product-img/venezia_notte.jpeg', 2),
+(5, 'Kazora Napoli Solare', '2882.46', 'Sunny design with luxury gold accents', 'product-img/napoli_solare.jpeg', 2),
+(6, 'Kazora Torino Acciaio', '2640.46', 'Steel strength with subtle Italian finesse', 'product-img/torino_acciaio.jpeg', 2),
+(7, 'Kazora Palermo Eleganza', '3160.96', 'Elegant design with a mother-of-pearl dial', 'product-img/palermo_eleganza.jpeg', 2),
+(8, 'Kazora Como Luna', '2841.46', 'Moon-colored dial with silver finish', 'product-img/como_luna.jpeg', 2),
+(9, 'Kazora Verona Tempo', '2727.46', 'Refined chronograph inspired by romantic Verona', 'product-img/verona_tempo.jpeg', 2),
+(10, 'Kazora Modena Scuro', '2991.46', 'Dark luxury with sporty details', 'product-img/modena_scuro.jpeg', 2),
+(11, 'Kazora Amalfi Azure', '2804.46', 'Sea-blue dial with rose gold accents', 'product-img/amalfi_azure.jpeg', 2),
+(12, 'Kazora Siena Notturna', '3160.96', 'Deep navy with a night-luxury look', 'product-img/siena_notturna.jpeg', 2),
+(13, 'Kazora Milano Rosa', '2567.46', 'Soft pink elegance with rose gold details', 'product-img/milano_rosa.jpeg', 1),
+(14, 'Kazora Firenze Perla', '2879.46', 'Mother-of-pearl dial with classic finesse', 'product-img/firenze_perla.jpeg', 1),
+(15, 'Kazora Roma Aurelia', '2727.46', 'Gold and ivory in a timeless women’s design', 'product-img/roma_aurelia.jpeg', 1),
+(16, 'Kazora Venezia Sera', '3075.46', 'Evening blue with subtle diamond elements', 'product-img/venezia_sera.jpeg', 1),
+(17, 'Kazora Napoli Alba', '2760.46', 'Sunray design in light champagne tone', 'product-img/napoli_alba.jpeg', 1),
+(18, 'Kazora Torino Luna', '2640.46', 'Silver moonlight on a slim leather strap', 'product-img/torino_luna.jpeg', 1),
+(19, 'Kazora Palermo Rosa', '2991.46', 'Soft pink luxury with Italian charm', 'product-img/palermo_rosa.jpeg', 1),
+(20, 'Kazora Como Eleganza', '2841.46', 'Minimalist women’s design with silver accents', 'product-img/como_eleganza.jpeg', 1),
+(21, 'Kazora Verona Bellezza', '2727.46', 'Romance in a round mother-of-pearl case', 'product-img/verona_bellezza.jpeg', 1),
+(22, 'Kazora Modena Bianca', '2910.06', 'White gold case with ivory dial', 'product-img/modena_bianca.jpeg', 1),
+(23, 'Kazora Amalfi Sole', '2804.46', 'Sunny women’s watch with golden bezel', 'product-img/amalfi_sole.jpeg', 1),
+(24, 'Kazora Siena Aurora', '3160.96', 'Pastel pink wrapped in midnight blue details', 'product-img/siena_aurora.jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,8 @@ CREATE TABLE `reviews` (
 INSERT INTO `reviews` (`id`, `product_id`, `name`, `rating`, `review`) VALUES
 (3, 1, 'Admin', '5', 'test'),
 (4, 1, 'Admin', '5', 'test'),
-(5, 16, 'Admin', '5', 'test');
+(5, 16, 'Admin', '5', 'test'),
+(6, 1, 'Admin', '3', 'test');
 
 -- --------------------------------------------------------
 
@@ -174,19 +175,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT voor een tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT voor een tabel `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
