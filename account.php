@@ -59,68 +59,7 @@ if (isset($_POST['delete_account'])) {
     header("Location: auth.php");
     exit;
 }
-
-$page_title = "My Account";
-require 'header.php';
 ?>
-
-<main class="auth-main">
-  <div class="container" style="max-width: 600px;">
-    <h2 class="text-center mb-5">Welcome back, <?= htmlspecialchars($user['name']) ?></h2>
-
-    <?php if (isset($error)) : ?>
-      <div class="alert alert-danger"><?= $error ?></div>
-    <?php endif; ?>
-
-    <form method="POST">
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input class="form-control" type="text" name="name" id="name" value="<?= htmlspecialchars($user['name']) ?>" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input class="form-control" type="email" name="email" id="email" value="<?= htmlspecialchars($user['email']) ?>" required>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Current password (required for changes)</label>
-        <input class="form-control" type="password" name="current_password">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">New password</label>
-        <input class="form-control" type="password" name="new_password" placeholder="Leave blank if you don't want to change">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Confirm new password</label>
-        <input class="form-control" type="password" name="confirm_password">
-      </div>
-
-      <p class="text-muted mt-3 mb-1">
-        Account created on: <?= date('d-m-Y H:i', strtotime($user['created_at'])) ?><br>
-        Password: ********
-      </p>
-
-      <button type="submit" name="save_changes" class="btn btn-secondary w-100 mt-3">Save changes</button>
-
-      <?php if ($user['role'] === 'admin') : ?>
-        <a href="admin.php" class="btn btn-outline-warning w-100 mt-2">Go to Admin Panel</a>
-      <?php endif; ?>
-
-      <a href="logout.php" class="btn btn-secondary w-100 mt-2">Logout</a>
-    </form>
-
-    <!-- Delete account form -->
-    <form method="POST" onsubmit="return confirm('Are you sure you want to delete your account? This action is permanent.')">
-      <button type="submit" name="delete_account" class="btn btn-delete w-100 mt-2">Delete Account</button>
-    </form>
-  </div>
-</main>
-
-<?php require 'footer.php'; ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -202,11 +141,7 @@ require 'header.php';
       <a href="logout.php" class="btn btn-dark w-100 mt-2">Logout</a>
     </div>
 
-      <!-- Delete button -->
-    <form method="post" onsubmit="return confirm('Are you sure you want to permanently delete your account? This cannot be undone.');">
-      <button type="submit" name="delete_account" class="btn btn-delete w-100 mt-2">Delete Account</button>
-    </form>
-
+      
   </main>
 
   <!-- <?php include 'footer.php'; ?> -->
