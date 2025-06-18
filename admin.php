@@ -36,6 +36,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_admin'])) {
   }
 }
 
+// Fetch categories for dropdown
+$categories = $conn->query("SELECT * FROM category");
+
+// Add new product
+$product_success = $product_error = "";
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
+  $name = trim($_POST['productname']);
+  $price = trim($_POST['price']);
+  $description = trim($_POST['description']);
+  $img = trim($_POST['img']);
+  $category_id = (int)$_POST['category_id'];
+
+  if ($name && $price && $description && $img && $category_id) {
+    $stmt = $conn->prepare("INSERT INTO products (productname, price, description, img, category_id) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssi", $name, $price, $description, $img, $category_id);
+    if ($stmt->execute()) {
+      $product_success = "New product successfully created.";
+    } else {
+      $product_error = "Error adding product.";
+    }
+  } else {
+    $product_error = "All fields are required.";
+  }
+}
+
+
 // Delete actions
 if (isset($_GET['delete_user'])) $conn->query("DELETE FROM users WHERE id=" . (int)$_GET['delete_user']);
 if (isset($_GET['delete_product'])) $conn->query("DELETE FROM products WHERE id=" . (int)$_GET['delete_product']);
@@ -139,6 +165,39 @@ $products = $conn->query("SELECT p.*, c.name AS category FROM products p JOIN ca
       <?php endwhile; ?>
     </tbody>
   </table>
+
+  <!-- Add New Product -->
+<h2 class="mt-5">➕ Add New Product</h2>
+<?php if ($product_success): ?><div class="alert alert-success"><?= $product_success ?></div><?php endif; ?>
+<?php if ($product_error): ?><div class="alert alert-danger"><?= $product_error ?></div><?php endif; ?>
+
+<form method="POST" class="row g-2 mb-5">
+  <input type="hidden" name="add_product" value="1" />
+  <div class="col-md-3">
+    <input type="text" name="productname" placeholder="Name" class="form-control" required />
+  </div>
+  <div class="col-md-2">
+    <input type="text" name="price" placeholder="Price" class="form-control" required />
+  </div>
+  <div class="col-md-3">
+    <input type="text" name="description" placeholder="Description" class="form-control" required />
+  </div>
+  <div class="col-md-2">
+    <input type="text" name="img" placeholder="Image path (e.g. product-img/example.jpeg)" class="form-control" required />
+  </div>
+  <div class="col-md-1">
+    <select name="category_id" class="form-control" required>
+      <option value="">Category</option>
+      <?php $categories->data_seek(0); while ($cat = $categories->fetch_assoc()): ?>
+        <option value="<?= $cat['id'] ?>"><?= $cat['id'] ?> - <?= htmlspecialchars($cat['name']) ?></option>
+      <?php endwhile; ?>
+    </select>
+  </div>
+  <div class="col-md-1">
+    <button class="btn btn-dark w-100">Add</button>
+  </div>
+</form>
+
 
   <!-- Section: All products -->
   <h2 class="mt-5">⌚ All Products</h2>

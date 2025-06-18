@@ -106,21 +106,18 @@ main.auth-main {
 }  
 
 .btn-delete {
-    background-color: #991b1b;
-    color: white;
+    background-color: #5c1f1f;
+    color: var(--white);
     padding: 10px 20px;
-    font-weight: 600;
-    border: 1px solid white;
+    font-weight: 500;
     transition: all 0.3s ease;
+    font-family: 'Georgia', serif;
 }
 
 .btn-delete:hover {
-    background-color: #ff4444;
-    color: var(--black);
-    transform: scale(1.05);
-    box-shadow: 0 0 10px var(--gold-glow);
+    background-color: #743232; 
+    color: var(--white);
 }
-
 
 .logo {
     color: var(--white);

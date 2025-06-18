@@ -50,15 +50,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['save_changes'])) {
     }
 }
 
-// Handle delete
 if (isset($_POST['delete_account'])) {
-    $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    session_destroy();
-    header("Location: auth.php");
-    exit;
+  $user_id = $_SESSION['user']['id'];
+
+  $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+  $stmt->bind_param("i", $user_id);
+  
+  if ($stmt->execute()) {
+      if ($stmt->affected_rows > 0) {
+          error_log("✅ Gebruiker met ID $user_id succesvol verwijderd.");
+          $stmt->close();
+          session_destroy();
+          header("Location: auth.php");
+          exit;
+      } else {
+          error_log("⚠️ Geen rijen verwijderd. ID bestond mogelijk niet.");
+          $error = "Je account kon niet worden verwijderd. Probeer opnieuw.";
+      }
+  } else {
+      error_log("❌ Fout bij uitvoeren DELETE: " . $stmt->error);
+      $error = "Er ging iets mis bij het verwijderen van je account.";
+  }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -139,9 +154,14 @@ if (isset($_POST['delete_account'])) {
 
       <!-- Logout knop -->
       <a href="logout.php" class="btn btn-dark w-100 mt-2">Logout</a>
-    </div>
 
-      
+      <!-- Verwijder account knop onderaan -->
+      <form method="POST" class="mt-3" onsubmit="return confirm('Weet je zeker dat je je account wilt verwijderen? Dit kan niet ongedaan worden gemaakt.')">
+        <button type="submit" name="delete_account" class="btn btn-delete w-100">Verwijder mijn account</button>
+      </form>
+
+    </div>
+ 
   </main>
 
   <!-- <?php include 'footer.php'; ?> -->
