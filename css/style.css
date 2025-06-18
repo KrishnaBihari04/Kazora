@@ -103,7 +103,24 @@ body, html {
 
 main.auth-main {
     margin-top: 50px;
-  }  
+}  
+
+.btn-delete {
+    background-color: #991b1b;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #ff4444;
+    color: var(--black);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--gold-glow);
+}
+
 
 .logo {
     color: var(--white);
