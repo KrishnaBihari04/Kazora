@@ -25,7 +25,7 @@ require 'header.php';
     <!-- Veelgestelde vragen blok -->
     <div class="mb-5">
       <h3 style="color: var(--gold-light); margin-bottom: 20px;">Before You Write Us</h3>
-      <ul class="text-start" style="max-width: 700px; margin: 0 auto; list-style: none; padding-left: 0; font-size: 1rem; color: var(--text-muted);">
+      <ul class="text-center" style="max-width: 700px; margin: 0 auto; list-style: none; padding-left: 0; font-size: 1rem; color: var(--text-muted);">
         <li class="mb-2">• Wondering about delivery times or return policies? <a href="#" style="color: var(--gold-light); text-decoration: underline;">Check our FAQ</a>.</li>
         <li class="mb-2">• Want to book a private boutique appointment? Mention it in your message.</li>
         <li class="mb-2">• Collaborations, press or wholesale inquiries? Select “Business” in your subject.</li>
