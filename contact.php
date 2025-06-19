@@ -32,27 +32,50 @@ require 'header.php';
       </ul>
     </div>
 
-    <!-- Formulier -->
-    <form action="#" method="post" style="max-width: 800px; margin: 0 auto;">
-      <div class="row mb-3">
-        <div class="col-md-6 mb-2">
-          <input type="text" class="form-control bg-white text-dark border-0 shadow-sm" placeholder="Your Name" required>
-        </div>
-        <div class="col-md-6 mb-2">
-          <input type="email" class="form-control bg-white text-dark border-0 shadow-sm" placeholder="Your Email" required>
-        </div>
-      </div>
+    <section class="section" id="contact">
+  <div class="container" style="max-width: 1000px;">
+    <h2 class="text-center mb-5" style="color: var(--gold-light); font-family: 'Georgia', serif; font-weight: bold; font-size: 2.2rem;">
+      Let’s Talk
+    </h2>
 
-      <div class="mb-3">
-        <input type="text" class="form-control bg-white text-dark border-0 shadow-sm" placeholder="Subject (e.g. Order, Business, Appointment)" required>
+    <form action="#" method="post" class="p-5 rounded shadow"
+      style="background-color: var(--light-gray); border: 1px solid var(--charcoal); box-shadow: 0 0 40px rgba(184,164,126,0.05);">
+
+      <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+          <label for="name" class="form-label text-light">Name</label>
+          <input type="text" class="form-control border-0 shadow-sm"
+            style="background-color: white; color: black;" id="name" placeholder="Your full name" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label text-light">Email</label>
+          <input type="email" class="form-control border-0 shadow-sm"
+            style="background-color: white; color: black;" id="email" placeholder="Your email address" required>
+        </div>
       </div>
 
       <div class="mb-4">
-        <textarea class="form-control bg-white text-dark border-0 shadow-sm" rows="5" placeholder="Your Message..." required></textarea>
+        <label for="subject" class="form-label text-light">Subject</label>
+        <input type="text" class="form-control border-0 shadow-sm"
+          style="background-color: white; color: black;" id="subject" placeholder="e.g. Order, Business, Appointment" required>
       </div>
 
-      <button type="submit" class="btn btn-outline-light px-4">Send Message</button>
+      <div class="mb-4">
+        <label for="message" class="form-label text-light">Message</label>
+        <textarea class="form-control border-0 shadow-sm" rows="6"
+          style="background-color: white; color: black;" id="message" placeholder="Your message..." required></textarea>
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn px-5 py-2"
+          style="border: 2px solid var(--gold-light); color: var(--gold-light); background-color: transparent; font-weight: 600; font-family: 'Georgia', serif; letter-spacing: 1px; transition: all 0.3s ease;">
+          Send Message
+        </button>
+      </div>
     </form>
+  </div>
+</section>
+
 
     <!-- Extra tekst onderaan -->
     <p class="mt-5" style="font-size: 0.95rem; color: var(--text-muted);">
