@@ -35,3 +35,6 @@ Database: MySQL
 💡 Reflection
 Kazora is more than just an assignment — it’s a milestone. It shows how far I’ve come in one year of coding, and it motivates me to keep pushing my skills further.
 👉 Feel free to explore the code, share feedback, or get inspired!
+
+(p.s I wrote the commits in dutch.)
+--Krishna
